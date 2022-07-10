@@ -24,13 +24,13 @@ const CreateUser: NextPage = () => {
           flex={1}
           borderRadius={8}
           bg="gray.800"
-          p={8}
+          p={[6, 8]}
         >
           <Heading size="lg" fontWeight="normal">Criar usuário</Heading>
           
           <Divider my={6} borderColor="gray.700" />
 
-          <VStack spacing={8}>
+          <VStack spacing={[6, 8]}>
             <SimpleGrid
               spacing={8}
               minChildWidth={240}
@@ -49,7 +49,7 @@ const CreateUser: NextPage = () => {
             </SimpleGrid>
 
             <SimpleGrid
-              spacing={8}
+              spacing={[6, 8]}
               minChildWidth={240}
               w="100%"
             >

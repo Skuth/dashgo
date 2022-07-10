@@ -2,13 +2,34 @@ import { NextPage } from "next"
 
 import { RiAddLine, RiPencilLine } from "react-icons/ri"
 
-import { Box, Button, Flex, Heading, Icon, Table, Thead, Th, Tr, Tbody, Td, Checkbox, Text } from "@chakra-ui/react"
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Icon,
+  Table,
+  Thead,
+  Th,
+  Tr,
+  Tbody,
+  Td,
+  Checkbox,
+  Text,
+  useBreakpointValue
+}
+from "@chakra-ui/react"
 
 import { Header } from "../../components/Header"
 import { Sidebar } from "../../components/Sidebar"
 import { Pagination } from "../../components/Pagination"
 
 const UserList: NextPage = () => {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true
+  })
+
   return (
     <Box>
       <Header />
@@ -50,13 +71,13 @@ const UserList: NextPage = () => {
           >
             <Thead>
               <Tr>
-                <Th px={6} color="gray.300" width={8}>
+                <Th px={[4, 4, 6]} color="gray.300" width={8}>
                   <Checkbox colorScheme="pink" />
                 </Th>
 
                 <Th>Usuário</Th>
 
-                <Th>Data de cadastro</Th>
+                {isWideVersion && <Th>Data de cadastro</Th>}
 
                 <Th w={8}></Th>
               </Tr>
@@ -64,7 +85,7 @@ const UserList: NextPage = () => {
 
             <Tbody>
               <Tr>
-                <Td px={6}>
+                <Td px={[4, 4, 6]}>
                   <Checkbox colorScheme="pink" />
                 </Td>
 
@@ -75,7 +96,7 @@ const UserList: NextPage = () => {
                   </Box>
                 </Td>
 
-                <Td>04 de Abril, 2022</Td>
+                {isWideVersion && <Td>04 de Abril, 2022</Td>}
 
                 <Td>
                   <Button
@@ -84,8 +105,9 @@ const UserList: NextPage = () => {
                     fontSize="sm"
                     colorScheme="purple"
                     leftIcon={<Icon as={RiPencilLine} fontSize={16} />}
+                    iconSpacing={!isWideVersion ? 0 : 2}
                   >
-                    Editar
+                    {isWideVersion ? "Editar" : ""}
                   </Button>
                 </Td>
               </Tr>

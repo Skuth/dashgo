@@ -1,5 +1,7 @@
 import { Box, Stack, Text, Link, Icon } from "@chakra-ui/react"
 import { RiDashboardLine, RiContactsLine, RiInputMethodLine, RiGitMergeLine } from "react-icons/ri"
+import { NavLink } from "./NavLink";
+import { NavSection } from "./NavSection";
 
 const Sidebar: React.FC = () => {
   return (
@@ -12,73 +14,27 @@ const Sidebar: React.FC = () => {
         spacing={12}
         align="flex-start"
       >
-        <Box>
-          <Text
-            fontWeight="bold"
-            color="gray.400"
-            fontSize="small"
-            textTransform="uppercase"
-          >
-            Geral
-          </Text>
-          <Stack
-            spacing={4}
-            mt={8}
-            align="stretch"
-          >
-            <Link
-              display="flex"
-              alignItems="center"
-              py={1}
-            >
-              <Icon as={RiDashboardLine} fontSize={20} />
-              <Text ml={4} fontWeight="medium">Dashboard</Text>
-            </Link>
+        <NavSection
+          title="Geral"
+        >
+          <NavLink icon={RiDashboardLine}>
+            Dashboard
+          </NavLink>
+          <NavLink icon={RiContactsLine}>
+            Usuários
+          </NavLink>
+        </NavSection>
 
-            <Link
-              display="flex"
-              alignItems="center"
-              py={1}
-            >
-              <Icon as={RiContactsLine} fontSize={20} />
-              <Text ml={4} fontWeight="medium">Usuários</Text>
-            </Link>
-          </Stack>
-        </Box>
-
-        <Box>
-          <Text
-            fontWeight="bold"
-            color="gray.400"
-            fontSize="small"
-            textTransform="uppercase"
-          >
+        <NavSection
+          title="Automação"
+        >
+          <NavLink icon={RiInputMethodLine}>
+            Formulários
+          </NavLink>
+          <NavLink icon={RiGitMergeLine}>
             Automação
-          </Text>
-          <Stack
-            spacing={4}
-            mt={8}
-            align="stretch"
-          >
-            <Link
-              display="flex"
-              alignItems="center"
-              py={1}
-            >
-              <Icon as={RiInputMethodLine} fontSize={20} />
-              <Text ml={4} fontWeight="medium">Formulários</Text>
-            </Link>
-
-            <Link
-              display="flex"
-              alignItems="center"
-              py={1}
-            >
-              <Icon as={RiGitMergeLine} fontSize={20} />
-              <Text ml={4} fontWeight="medium">Automação</Text>
-            </Link>
-          </Stack>
-        </Box>
+          </NavLink>
+        </NavSection>
       </Stack>
     </Box>
   )

@@ -1,4 +1,5 @@
 import { NextPage } from "next"
+import Link from "next/link"
 
 import { Box, Button, Divider, Flex, Heading, HStack, SimpleGrid, VStack } from "@chakra-ui/react"
 
@@ -73,11 +74,13 @@ const CreateUser: NextPage = () => {
             <HStack
               spacing={4}
             >
-              <Button
-                colorScheme="whiteAlpha"
-              >
-                Cancelar
-              </Button>
+              <Link href="/users" passHref>
+                <Button
+                  colorScheme="whiteAlpha"
+                >
+                  Cancelar
+                </Button>
+              </Link>
 
               <Button
                 colorScheme="pink"

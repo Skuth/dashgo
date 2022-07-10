@@ -18,10 +18,10 @@ const SidebarNav: React.FC = () => {
       <NavSection
         title="Geral"
       >
-        <NavLink icon={RiDashboardLine}>
+        <NavLink icon={RiDashboardLine} href="/dashboard">
           Dashboard
         </NavLink>
-        <NavLink icon={RiContactsLine}>
+        <NavLink icon={RiContactsLine} href="/users">
           Usuários
         </NavLink>
       </NavSection>
@@ -29,10 +29,10 @@ const SidebarNav: React.FC = () => {
       <NavSection
         title="Automação"
       >
-        <NavLink icon={RiInputMethodLine}>
+        <NavLink icon={RiInputMethodLine} href="/dashboard">
           Formulários
         </NavLink>
-        <NavLink icon={RiGitMergeLine}>
+        <NavLink icon={RiGitMergeLine} href="/dashboard">
           Automação
         </NavLink>
       </NavSection>

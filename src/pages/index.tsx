@@ -30,7 +30,7 @@ const SignIn: NextPage = () => {
   const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
     await new Promise((resolve) => setTimeout(() => resolve(""), 1500))
 
-    console.log("values", values);
+    console.log(values);
   }
 
   return (

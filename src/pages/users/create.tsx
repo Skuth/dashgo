@@ -42,7 +42,6 @@ const CreateUser: NextPage = () => {
     await new Promise((resolve) => setTimeout(() => resolve(""), 1500))
 
     console.log(values);
-    
   }
 
   return (
